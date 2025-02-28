@@ -1,0 +1,6 @@
+#ProcessingScreen {
+    padding: 50px 100px;
+    box-shadow: #4c4c5f 10px 10px 12px;
+    border: 2px #b3b4b5 solid;
+    z-index: 999;
+}
