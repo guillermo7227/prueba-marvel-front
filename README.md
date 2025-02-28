@@ -1,3 +1,19 @@
+# Front End Prueba Marvel
+
+Este proyecto necesita un archivo .env en el directorio raíz (al lado de jsconfig.json). El archivo .env debe
+tener la siguiente variable de entorno.
+
+### `REACT_APP_API_HOST_URL=http://abcd.efg:1234`
+
+Donde `abdc.efg` es la url del backend y `1234` es el puerto (si es encesario).
+
+Correr el projecto con `npm start`.
+
+**NOTA: El primer inicio de sesión tardará unos minutos debido a está "despertando" la base de datos de Azure.**
+
+Guillermo Agudelo - 2025
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
