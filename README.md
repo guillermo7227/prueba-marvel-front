@@ -3,7 +3,7 @@
 Este proyecto necesita un archivo .env en el directorio raíz (al lado de jsconfig.json). El archivo .env debe
 tener la siguiente variable de entorno.
 
-### `REACT_APP_API_HOST_URL=http://abcd.efg:1234`
+`REACT_APP_API_HOST_URL=http://abcd.efg:1234`
 
 Donde `abdc.efg` es la url del backend y `1234` es el puerto (si es encesario).
 
