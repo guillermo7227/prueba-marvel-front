@@ -25,8 +25,9 @@ jobs:
 
       - name: Crea .env
         run: |
-          type NUL > .env
-          echo "REACT_APP_API_HOST_URL: ${{ vars.REACT_APP_API_HOST_URL }}" > .env
+          touch .env
+          echo "REACT_APP_API_HOST_URL: ${{ vars.REACT_APP_API_HOST_URL }}" >> .env
+        shell: bash
 
       - name: npm install, build, and test
         run: |
