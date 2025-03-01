@@ -76,23 +76,30 @@ function Favorite() {
                         <hr/>
                     </>
                 :
-                favorites.map((favorite,i,all) => {
-                    if(i===all.length-1) setTimeout(_ => HG.renderTooltips(componentId),100);
-                    return (
-                        <div key={favorite.id} className="col col-sm-12 col-md-6 col-lg-4">
-                            <a href={favorite.urlDetailPage} target="_blank">
-                                <img src={favorite.thumbnailPath} data-bs-toggle="tooltip" data-bs-title={favorite.textDetail} data-bs-html="true" />
-                            </a>
-                            <p>
-                                {!favorite.esFavorito ?
-                                    <a className="link-favorito" onClick={_ => quitarFavorito(favorite,i)} data-bs-toggle="tooltip" data-bs-title="Quitar de Mis Favoritos">⭐️ </a>
+                favorites.length ?
 
-                                :''}
-                                {favorite.title}
-                            </p>
-                        </div>
-                    )
-                })
+                    favorites.map((favorite,i,all) => {
+                        if(i===all.length-1) setTimeout(_ => HG.renderTooltips(componentId),100);
+                        return (
+                            <div key={favorite.id} className="col col-sm-12 col-md-6 col-lg-4">
+                                <a href={favorite.urlDetailPage} target="_blank">
+                                    <img src={favorite.thumbnailPath} data-bs-toggle="tooltip" data-bs-title={favorite.textDetail} data-bs-html="true" />
+                                </a>
+                                <p>
+                                    {!favorite.esFavorito ?
+                                        <a className="link-favorito" onClick={_ => quitarFavorito(favorite,i)} data-bs-toggle="tooltip" data-bs-title="Quitar de Mis Favoritos">⭐️ </a>
+
+                                    :''}
+                                    {favorite.title}
+                                </p>
+                            </div>
+                        )
+                    })
+                :
+                <p>No se encontraron favoritos. <br/>
+                    <br/>Agregue comics a su lista de favoritos yendo a la lista de 
+                    <br/>Comics y dando click en la estrella (★) 
+                    <br/>que está al lado del nombre del comic.</p>
             }
         </div>
         </div>

@@ -16,7 +16,7 @@ echo REACT_APP_API_HOST_URL=http://mi-url-backend >> .env
 npm start
 ````
 
-**NOTA: El primer inicio de sesión tardará unos minutos debido a está "despertando" la base de datos de Azure.**
+**NOTA: El primer inicio de sesión (o registro) tardará unos minutos debido a está "despertando" la base de datos de Azure.**
 
 ---
 
