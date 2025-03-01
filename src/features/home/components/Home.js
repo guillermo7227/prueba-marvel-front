@@ -19,7 +19,7 @@ function Home() {
                         { HG.userData?.token ?
                             <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" onClick={_ => navigate('/comic')}>Ver Comics</button>
                         :
-                            <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" onClick={_ => navigate('/auth')}>Iniciar sesión</button>
+                            <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" onClick={_ => navigate('/auth')}>Iniciar sesión / Registrarse</button>
                         }
                         </div>
                         <div className="overflow-hidden" style={{maxHeight:'30vh'}}>
