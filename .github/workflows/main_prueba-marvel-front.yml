@@ -26,18 +26,19 @@ jobs:
       - name: Crea .env
         run: |
           touch .env
-          echo REACT_APP_API_HOST_URL=${{ vars.REACT_APP_API_HOST_URL }} >> .env
+          echo REACT_APP_API_HOST_URL=$REACT_APP_API_HOST_URL >> .env
           echo "cat .env"
           cat .env
-        shell: bash
+        env:
+          REACT_APP_API_HOST_URL: ${{ vars.REACT_APP_API_HOST_URL }}
+
 
       - name: npm install, build, and test
         run: |
           npm install
           npm run build --if-present
           npm run test --if-present
-        env:
-          CI: false
+          mv .env build
       
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
