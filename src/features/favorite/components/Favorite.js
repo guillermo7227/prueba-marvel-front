@@ -42,23 +42,24 @@ function Favorite() {
 
 
   function quitarFavorito(comic,index) {
-        HG.jsonRequest({
-            componentId,
-            url: ApiFavorite.favorite,
-            method: 'DELETE',
-            body:{
-                email: HG.userData.user.email,
-                comicId: comic.comicId
-            },
-            successCodes: [200],
-            success: () => {
-                // const comicNew = comics.find(x => x.id===comic.id)
-                // comicNew.esFavorito = false;
-                const favoritesNew = [...favorites].filter(x => x.id!==comic.id);
-                setFavorites(favoritesNew);
-                HG.showToast(componentId,'✅ El favorito ha sido quitado')
-            }
-        })
+
+        if (window.confirm(`¿Desea eliminar ${comic.title} de sus favoritos?`)===true) {
+            HG.jsonRequest({
+                componentId,
+                url: ApiFavorite.favorite,
+                method: 'DELETE',
+                body:{
+                    email: HG.userData.user.email,
+                    comicId: comic.comicId
+                },
+                successCodes: [200],
+                success: () => {
+                    const favoritesNew = [...favorites].filter(x => x.id!==comic.id);
+                    setFavorites(favoritesNew);
+                    HG.showToast(componentId,'✅ El favorito ha sido quitado')
+                }
+            })
+        }
     }
     
     return(
